@@ -7,12 +7,12 @@
     <title>Exemplo 1</title>
 </head>
 <body>
-    <h1>PHP POO - exemplo 1</h1>
+    <h1>PHP POO - exemplo 2</h1>
     <hr>
     <ul>
-        <li>Criação de classe</li>
-        <li>Importação do arquivo de classe</li>
-        <li>Criação de objetos</li>
+        <li>Criação dos objetos</li>
+        <li>uso do metodo construtor</li>
+        <li>uso do <code>$this</code> para acessar as propriedades</li>
     </ul>
 
     <?php
@@ -20,8 +20,8 @@
     require_once "src/Cliente.php";
 
     // criação dos objetos
-    $clienteA = new cliente;
-    $clienteB = new cliente;
+    $clienteA = new cliente('Tiago', 'tiago@gmail.com');
+    $clienteB = new cliente('Jon oliva', 'savatage@msn.com');
     ?>
 
     <pre> <?=var_dump($clienteA, $clienteB)?> </pre>
