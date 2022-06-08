@@ -7,11 +7,12 @@
     <title>Exemplo 1</title>
 </head>
 <body>
-    <h1>PHP POO - exemplo 3</h1>
+    <h1>PHP POO - exemplo 4</h1>
     <hr>
     <ul>
-        <li>Acesso direto a propriedades</li>
-        <li>Atribuição de dados e leitura</li>
+        <li>Encapsulamento</li>
+        <li>Modificadorres de visibilidade</li>
+        <li>Metodos getters e setters</li>
     </ul>
 
     <?php
@@ -22,31 +23,38 @@
     $clienteA = new cliente;
     $clienteB = new cliente;
 
-    // atribuindo dados as propriedades do objeto
+    // atribuindo dados via setters do objeto
 
-    $clienteA-> nome = "tiago";
-    $clienteA-> email = "tiago@gmail.com";
-    $clienteA-> telefones = ["11-2135-0300","11-97777-5555"];
+    $clienteA->setNome("tiago");
+    $clienteA->setEmail("tiago@outlook.com");
+    $clienteA->setSenha("123abc");
 
-    $clienteB-> nome = "bernardo";
-    $clienteB-> email = "bernardo@hotmail.com";
-    $clienteB-> telefones = array("11-98888-5555");
+    
+
+
+    $clienteB->setNome("bernarndo");
+    $clienteB->setEmail("bernardo@gmail.com");
+    $clienteB->setSenha("xyz789");
+
+    /* 
+    SET significa pegar uma classe e atribuir/colocar dados a ela
+    GET significa pegar uma classe e fazer com que ela seja exibida
+    */
     ?>
 
-    <h2>dados dos objetos (leitura)</h2>
-    <h3> <?=$clienteA->nome ?></h3>
-    <p>Email: <?=$clienteA->email ?> </p>
-    <p>Telefones: <?=implode(", ",$clienteA->telefones) ?></p>
-    <p>Senha: <?=$clienteA->senha?></p>
+    <h2>dados dos objetos (leitura e getters)</h2>
+    <h3> <?=$clienteA->getNome() ?></h3>
+    <p> <?=$clienteA->getEmail() ?> </p>
+    <p> <?=$clienteA->getSenha() ?> </p>
+    
+    
 
-    <h3> <?=$clienteB->nome ?> </h3>
-    <p><?=$clienteB->email ?></p>
-    <p>Telefones: <?=implode(",",$clienteB->telefones)?></p>
-
-    <h2>Chamando o metodo exebirDados</h2>
-    <?= $clienteA->exibirDados() ?>
-    <?= $clienteB->exibirDados() ?>
-
+    <h3> <?=$clienteB->getNome() ?> </h3>
+    <p> <?=$clienteB->getEmail() ?> </p>
+    <p> <?=$clienteB->getSenha() ?> </p>
+    
+    
+    
     <pre> <?=var_dump($clienteA, $clienteB)?> </pre>
     
 </body>
