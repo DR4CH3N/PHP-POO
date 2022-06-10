@@ -4,58 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 1</title>
+    <title>Exemplo 5</title>
 </head>
 <body>
-    <h1>PHP POO - exemplo 4</h1>
+    <h1>PHP POO - exemplo 5</h1>
     <hr>
     <ul>
-        <li>Encapsulamento</li>
-        <li>Modificadorres de visibilidade</li>
-        <li>Metodos getters e setters</li>
+        <li>herança</li>
+        <li>Classe abstrata (não pode ser instanciada)</li>
     </ul>
 
     <?php
     // importando a classe
-    require_once "src/Cliente.php";
+    require_once "src/pessoaFisica.php"; // subclasse
+    require_once "src/PessoaJuridica.php"; // subclasse
 
-    // criação dos objetos
-    $clienteA = new cliente;
-    $clienteB = new cliente;
-
-    // atribuindo dados via setters do objeto
-
-    $clienteA->setNome("tiago");
-    $clienteA->setEmail("tiago@outlook.com");
-    $clienteA->setSenha("123abc");
-
-    
+    $clientePF = new PessoaFisica;
+    $clientePF->setNome('Tiago');
+    $clientePF->setIdade(25);
+    $clientePF->setSenha("Tiago123");
+    $clientePF->setCpf('123.456.789.00');
+    $clientePF->setEmail('tiago@gmail.com');
 
 
-    $clienteB->setNome("bernarndo");
-    $clienteB->setEmail("bernardo@gmail.com");
-    $clienteB->setSenha("xyz789");
-
-    /* 
-    SET significa pegar uma classe e atribuir/colocar dados a ela
-    GET significa pegar uma classe e fazer com que ela seja exibida
-    */
+    $clientePJ = new PessoaJuridica;
+    $clientePJ->setNomeFantasia('qualquer coisa');
+    $clientePJ->setCnpj('987.654.321.00');
+    $clientePJ->setAnoFundacao(1990);
     ?>
 
-    <h2>dados dos objetos (leitura e getters)</h2>
-    <h3> <?=$clienteA->getNome() ?></h3>
-    <p> <?=$clienteA->getEmail() ?> </p>
-    <p> <?=$clienteA->getSenha() ?> </p>
-    
-    
+    <pre> <?=var_dump($clientePF)?> </pre>
+    <pre> <?=var_dump($clientePJ)?> </pre>
 
-    <h3> <?=$clienteB->getNome() ?> </h3>
-    <p> <?=$clienteB->getEmail() ?> </p>
-    <p> <?=$clienteB->getSenha() ?> </p>
-    
-    
-    
-    <pre> <?=var_dump($clienteA, $clienteB)?> </pre>
     
 </body>
 </html>
