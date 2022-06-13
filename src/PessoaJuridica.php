@@ -1,6 +1,8 @@
 <?php
 require_once "Cliente.php";
 
+// final class NÃO permite herança
+
 class PessoaJuridica extends Cliente {
 
     private string $cnpj;
@@ -8,8 +10,12 @@ class PessoaJuridica extends Cliente {
     private string $nomeFantasia;
 
     
-
+    public function __construct()
+    {
+        $this->setSituacao("verificar");
+    }
     
+
     public function getCnpj(): string
     {
         return $this->cnpj;

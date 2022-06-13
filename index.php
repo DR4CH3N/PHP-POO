@@ -12,12 +12,14 @@
     <ul>
         <li>herança</li>
         <li>Classe abstrata (não pode ser instanciada)</li>
+        <li>Classe final</li>
     </ul>
 
     <?php
     // importando a classe
     require_once "src/pessoaFisica.php"; // subclasse
     require_once "src/PessoaJuridica.php"; // subclasse
+    require_once "src/MEI.php"; // MEI subclasse
 
     $clientePF = new PessoaFisica;
     $clientePF->setNome('Tiago');
@@ -31,6 +33,15 @@
     $clientePJ->setNomeFantasia('qualquer coisa');
     $clientePJ->setCnpj('987.654.321.00');
     $clientePJ->setAnoFundacao(1990);
+
+
+    $clienteMEI = new MEI;
+    $clienteMEI->setNome("James Hetfield");
+    $clienteMEI->setNomeFantasia("metallica");
+    $clienteMEI->setCnpj("12.055.0001/000-42");
+    $clienteMEI->setAreaDeAtuacao("Música");
+
+    
     ?>
 
     <pre> <?=var_dump($clientePF)?> </pre>

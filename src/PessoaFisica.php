@@ -8,7 +8,12 @@ class PessoaFisica extends Cliente {
     private int $idade;
 
     
+    public function __construct()
+    {
+        // toda vez que isso for criado ele vai entrar em execução automaticamente
 
+        $this->setSituacao("normal");
+    }
     
 
 
