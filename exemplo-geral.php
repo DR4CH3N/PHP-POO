@@ -7,6 +7,7 @@ class exemplo {
     public string $nome;
     public string $escola;
     public string $cidade;
+    
 }
 
 // criar objetos/instancias
