@@ -24,7 +24,7 @@ class PessoaFisica extends Cliente {
     }
 
     
-    public function setIdade(int $idade): self
+    public function setIdade(int $idade)
     {
         $this->idade = $idade;
 
@@ -38,10 +38,16 @@ class PessoaFisica extends Cliente {
     }
 
     
-    public function setCpf(string $cpf): self
+    public function setCpf(string $cpf)
     {
         $this->cpf = $cpf;
 
         return $this;
+    }
+
+    public function exibirDados() {
+        echo "<h3>".$this->getNome()."</h3>";
+        echo "<p>Idade: ".$this->getIdade()."</p>";
+        echo "<p>Situação: ".$this->getSituacao()."</p>";
     }
 }

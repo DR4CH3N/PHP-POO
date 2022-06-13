@@ -4,24 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 5</title>
+    <title>Exemplo 6</title>
 </head>
 <body>
-    <h1>PHP POO - exemplo 5</h1>
+    <h1>PHP POO - exemplo 6</h1>
+    <h2>Assuntos abordados</h2>
     <hr>
     <ul>
-        <li>herança</li>
-        <li>Classe abstrata (não pode ser instanciada)</li>
-        <li>Classe final (não permite herança)</li>
-        <li>Metodos protegidos (acessiveis apenas pelas subclasses)</li>
-        
+        <li>polimorfismo</li>
     </ul>
 
     <?php
     // importando a classe
     require_once "src/pessoaFisica.php"; // subclasse
     require_once "src/PessoaJuridica.php"; // subclasse
-    require_once "src/MEI.php"; // MEI subclasse
 
     $clientePF = new PessoaFisica;
     $clientePF->setNome('Tiago');
@@ -32,25 +28,27 @@
 
 
     $clientePJ = new PessoaJuridica;
-    $clientePJ->setNomeFantasia('qualquer coisa');
+    $clientePJ->setNome('qualquer coisa');
     $clientePJ->setCnpj('987.654.321.00');
     $clientePJ->setAnoFundacao(1990);
-
-
-    $clienteMEI = new MEI;
-    $clienteMEI->setNome("James Hetfield");
-    $clienteMEI->setNomeFantasia("metallica");
-    $clienteMEI->setCnpj("12.055.0001/000-42");
-    $clienteMEI->setAreaDeAtuacao("Música");
-
-
-
 
     ?>
 
     <pre> <?=var_dump($clientePF)?> </pre>
     <pre> <?=var_dump($clientePJ)?> </pre>
 
+    <h3>pessoa fisica</h3>
+    <p><?=$clientePF->getNome()?></p>
+
+    <h3>Pessoa juridica</h3>
+    <p><?=$clientePJ->getNome()?></p>
+
+    <hr>
+    <section>
+    <?=$clientePF->exibirDados()?>
+    <?=$clientePJ->exibirDados()?>
+
+    </section>
     
 </body>
 </html>
