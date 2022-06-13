@@ -35,14 +35,18 @@ abstract class Cliente {
         $this->senha = password_hash($senha, PASSWORD_DEFAULT);
     }
 
-   
-    public function getSituacao(): string
+   // modificador de visibilidade
+   /*   public: nenhuma restrição 
+        private: restrição total (só a classe conhece os recusos dela)
+        protected: restrição parcial (recursos acessados pela propria classe e pelas subclasses que a herdam)
+   */
+    protected function getSituacao(): string
     {
         return $this->situacao;
     }
 
      
-    public function setSituacao(string $situacao)
+    protected function setSituacao(string $situacao)
     {
         $this->situacao = $situacao;
 

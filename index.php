@@ -12,7 +12,9 @@
     <ul>
         <li>herança</li>
         <li>Classe abstrata (não pode ser instanciada)</li>
-        <li>Classe final</li>
+        <li>Classe final (não permite herança)</li>
+        <li>Metodos protegidos (acessiveis apenas pelas subclasses)</li>
+        
     </ul>
 
     <?php
@@ -41,7 +43,9 @@
     $clienteMEI->setCnpj("12.055.0001/000-42");
     $clienteMEI->setAreaDeAtuacao("Música");
 
-    
+
+
+
     ?>
 
     <pre> <?=var_dump($clientePF)?> </pre>
